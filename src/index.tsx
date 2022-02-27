@@ -1,17 +1,29 @@
-import React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import * as React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BulbStateProvider } from './states/bulb';
+import { EventsStateProvider } from './states/events';
+import theme from './theme';
+
+const ThemedApp = () => {
+  const prefersDarkMode : boolean = useMediaQuery('(prefers-color-scheme: dark)');
+  return (
+  <ThemeProvider theme={theme(prefersDarkMode)}>
+    <CssBaseline />
+    <BulbStateProvider>
+      <EventsStateProvider>
+      <App />
+      </EventsStateProvider>
+    </BulbStateProvider>
+  </ThemeProvider>)
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <ThemedApp />,
+  document.querySelector('#root'),
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
