@@ -7,7 +7,7 @@ Source code of the [Bulb Event Demo](https://opentezos.com/archetype/events/dapp
 Deploy bulb contract with [`completium-cli`](https://completium.com/docs/cli) with the following command:
 
 ```bash
-$ completium-cli set endpoint
+$ completium-cli set endpoint https://hangzhounet.api.tez.ie
 $ completium-cli deploy ./contract/bulb.arl
 ```
 
