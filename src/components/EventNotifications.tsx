@@ -20,7 +20,11 @@ const NotificationMenu = () => {
     const isPaused = paused
     setPaused(prev => !prev)
     if (isPaused) {
-      await runCrank()
+      await runCrank({
+        endpoint: 'https://hangzhounet.api.tez.ie',
+        well : 'KT1UsVVireDXZE5R1waCeyKnYD178g2cVDji',
+        verbose: true
+      })
     } else {
       stopCrank();
     }

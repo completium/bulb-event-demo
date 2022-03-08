@@ -34,7 +34,11 @@ function App() {
       switchOff()
     })
     const runEventListener = async () => {
-      runCrank()
+      runCrank({
+        endpoint: 'https://hangzhounet.api.tez.ie',
+        well : 'KT1UsVVireDXZE5R1waCeyKnYD178g2cVDji',
+        verbose: true
+      })
     };
     runEventListener()
   });

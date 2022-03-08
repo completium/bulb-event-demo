@@ -12,7 +12,7 @@ import theme from './theme';
 const ThemedApp = () => {
   const prefersDarkMode : boolean = useMediaQuery('(prefers-color-scheme: dark)');
   return (
-  <ThemeProvider theme={theme(false)}>
+  <ThemeProvider theme={theme(prefersDarkMode)}>
     <CssBaseline />
     <BulbStateProvider>
       <EventsStateProvider>
