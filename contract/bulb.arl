@@ -1,0 +1,17 @@
+archetype bulb
+
+states = | On | Off
+
+event SwitchOn {}
+
+event SwitchOff {}
+
+transition switchOn() {
+  from Off to On
+  with effect { emit<SwitchOn>({}) }
+}
+
+transition switchOff() {
+  from On to Off
+  with effect { emit<SwitchOff>({}) }
+}

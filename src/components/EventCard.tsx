@@ -1,5 +1,5 @@
-import { ContainerProps, Grid, SvgIconProps, Typography } from "@mui/material"
-import { EventData } from "../indexer/types"
+import { Grid, SvgIconProps, Typography } from "@mui/material"
+import { WellEventData } from "@completium/event-well-crank"
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import ReceiptIcon from '@mui/icons-material/Receipt';
@@ -13,7 +13,7 @@ import styled from '@emotion/styled';
 import { forwardRef } from "react";
 
 export type EventCardProps = {
-  data : EventData
+  data : WellEventData
 }
 
 const getBlockUrl = (hash : string) : string => {

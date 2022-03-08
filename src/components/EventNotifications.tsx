@@ -1,16 +1,17 @@
+import { runCrank, stopCrank } from '@completium/event-well-crank';
+import ClearIcon from '@mui/icons-material/Clear';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import PauseIcon from '@mui/icons-material/Pause';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import { Grid, Typography } from '@mui/material';
 import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { EventCard } from './EventCard';
-import { useState } from "react";
-import { useClearEvents, useEvents, useNbNewEvents, useOpenEvents } from '../states/events';
-import { Grid, Typography } from '@mui/material';
-import PauseIcon from '@mui/icons-material/Pause';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import ClearIcon from '@mui/icons-material/Clear';
 import { useTheme } from "@mui/material/styles";
-import { run, stop } from '../indexer/indexer';
+import { useState } from "react";
+
+import { useClearEvents, useEvents, useNbNewEvents, useOpenEvents } from '../states/events';
+import { EventCard } from './EventCard';
 
 const NotificationMenu = () => {
   const [paused, setPaused] = useState(false);
@@ -19,9 +20,9 @@ const NotificationMenu = () => {
     const isPaused = paused
     setPaused(prev => !prev)
     if (isPaused) {
-      await run()
+      await runCrank()
     } else {
-      stop();
+      stopCrank();
     }
   }
   const clear = () => {

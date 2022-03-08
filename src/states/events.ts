@@ -1,8 +1,8 @@
 import constate from "constate";
 import { useCallback, useState } from "react";
-import { EventData } from "../indexer/types"
+import { WellEventData } from "@completium/event-well-crank"
 
-export const eventMockup : EventData = {
+export const eventMockup : WellEventData = {
   block : "BL1iKL7XjsMNREMYerhAkC9C8hdnBYrq4mF72c9PkyBk3cLQFQJ",
   op : "onna7P1tgB8UYDyDZGn8xACiNoEbCotQ1CNGtL4tdhXrnGSQ38d",
   source : "KT19EAMugKU416cbA9jL1XcukWArfpv4dLYu",
@@ -10,10 +10,10 @@ export const eventMockup : EventData = {
 }
 
 function useEventsState() {
-  const [events, setEvents] = useState<Array<EventData>>([]);
+  const [events, setEvents] = useState<Array<WellEventData>>([]);
   const [nbNewEvents, setNbEvents] = useState(0);
   const openEvents = useCallback(() => setNbEvents(prev => 0), [])
-  const addEvent = useCallback((e : EventData) => {
+  const addEvent = useCallback((e : WellEventData) => {
       setEvents(prev => prev.concat([e]))
       setNbEvents(prev => prev + 1)
   }, [])

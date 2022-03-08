@@ -1,19 +1,18 @@
+import { runCrank, WellEventData } from '@completium/event-well-crank';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { Container, Grid, IconButton } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { useEffect } from 'react';
 
-import { useSwitchOff, useSwitchOn } from './states/bulb';
+import { register_SwitchOff, register_SwitchOn, SwitchOff, SwitchOn } from './bindings/bulb_bindings';
 import Bulb from './components/Bulb';
-//import { SwitchButton } from './components/SwitchButton';
-import { TezosIcon } from './components/TezosIcon';
-import { registerSwitchOff, registerSwitchOn, SwitchOff, SwitchOn } from './bindings/bulb_bindings';
-import { run } from './indexer/indexer';
-import { EventData } from './indexer/types';
 import { EventNotifications } from './components/EventNotifications';
+//import { TezosIcon } from './components/SwitchButton';
+import { TezosIcon } from './components/TezosIcon';
+import { useSwitchOff, useSwitchOn } from './states/bulb';
 import { useAddEvent } from './states/events';
-import GitHubIcon from '@mui/icons-material/GitHub';
 
 const bulbAddress = "KT19EAMugKU416cbA9jL1XcukWArfpv4dLYu"
 
@@ -22,22 +21,22 @@ function App() {
   const switchOff = useSwitchOff()
   const addEvent = useAddEvent()
   useEffect(() => {
-    registerSwitchOn(bulbAddress,(e : SwitchOn, d : EventData | undefined) => {
+    register_SwitchOn(bulbAddress,(e : SwitchOn, d : WellEventData | undefined) => {
       if (d !== undefined) {
         addEvent(d)
       }
       switchOn()
     })
-    registerSwitchOff(bulbAddress,(e : SwitchOff, d : EventData | undefined) => {
+    register_SwitchOff(bulbAddress,(e : SwitchOff, d : WellEventData | undefined) => {
       if (d !== undefined) {
         addEvent(d)
       }
       switchOff()
     })
-    const runEvent = async () => {
-      run()
+    const runEventListener = async () => {
+      runCrank()
     };
-    runEvent()
+    runEventListener()
   });
   return (
     <div>
@@ -49,7 +48,7 @@ function App() {
             justifyContent="space-between"
             alignItems="center" >
             <Grid item>
-              <Typography>Event Listener Demo</Typography>
+              <Typography>Event Well Crank demo</Typography>
             </Grid>
             <Grid item>
               <Grid container>
