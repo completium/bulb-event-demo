@@ -23,7 +23,8 @@ const NotificationMenu = () => {
       await runCrank({
         endpoint: 'https://ithacanet.ecadinfra.com',
         well : 'KT1ReVgfaUqHzWWiNRfPXQxf7TaBLVbxrztw',
-        verbose: true
+        verbose : true,
+        horizon : 4
       })
     } else {
       stopCrank();
