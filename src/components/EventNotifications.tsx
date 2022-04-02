@@ -24,7 +24,7 @@ const NotificationMenu = () => {
         endpoint: 'https://ithacanet.ecadinfra.com',
         well : 'KT1ReVgfaUqHzWWiNRfPXQxf7TaBLVbxrztw',
         verbose : true,
-        horizon : 4
+        horizon : 2
       })
     } else {
       stopCrank();

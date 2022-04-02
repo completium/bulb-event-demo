@@ -3,6 +3,7 @@ import { WellEventData } from "@completium/event-well-crank"
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import ReceiptIcon from '@mui/icons-material/Receipt';
+import CategoryIcon from '@mui/icons-material/Category';
 import { useTheme } from "@mui/material/styles";
 import ViewHeadlineIcon from '@mui/icons-material/ViewHeadline';
 import Tooltip from '@mui/material/Tooltip';
@@ -92,6 +93,16 @@ export const EventCard = (props : EventCardProps) => {
             {props.data.source}
           </HashTypography>
         </HashLink>
+      </Grid>
+      <Grid item xs={1}>
+        <Tooltip title="Event Type">
+          <GreyIcon><CategoryIcon/></GreyIcon>
+        </Tooltip>
+      </Grid>
+      <Grid item xs={11}>
+        <HashTypography>
+          {props.data.evtype}
+        </HashTypography>
       </Grid>
     </Grid>
   )
