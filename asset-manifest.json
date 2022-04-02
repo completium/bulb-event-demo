@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/bulb-event-demo/static/js/main.4150c8a7.js",
+    "main.js": "/bulb-event-demo/static/js/main.f61fa5df.js",
     "index.html": "/bulb-event-demo/index.html",
-    "main.4150c8a7.js.map": "/bulb-event-demo/static/js/main.4150c8a7.js.map"
+    "main.f61fa5df.js.map": "/bulb-event-demo/static/js/main.f61fa5df.js.map"
   },
   "entrypoints": [
-    "static/js/main.4150c8a7.js"
+    "static/js/main.f61fa5df.js"
   ]
 }
