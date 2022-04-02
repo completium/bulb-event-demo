@@ -6,7 +6,8 @@ export const eventMockup : WellEventData = {
   block : "BL1iKL7XjsMNREMYerhAkC9C8hdnBYrq4mF72c9PkyBk3cLQFQJ",
   op : "onna7P1tgB8UYDyDZGn8xACiNoEbCotQ1CNGtL4tdhXrnGSQ38d",
   source : "KT19EAMugKU416cbA9jL1XcukWArfpv4dLYu",
-  time : (new Date()).toISOString()
+  time : (new Date()).toISOString(),
+  evtype : 'SwitchOn'
 }
 
 function useEventsState() {

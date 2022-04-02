@@ -14,7 +14,7 @@ import { TezosIcon } from './components/TezosIcon';
 import { useSwitchOff, useSwitchOn } from './states/bulb';
 import { useAddEvent } from './states/events';
 
-const bulbAddress = "KT19EAMugKU416cbA9jL1XcukWArfpv4dLYu"
+const bulbAddress = "KT1PKQ76kR1nZSvu5YN41r7GjYcAqGQSrLxg"
 
 function App() {
   const switchOn = useSwitchOn()
@@ -35,8 +35,8 @@ function App() {
     })
     const runEventListener = async () => {
       runCrank({
-        endpoint: 'https://hangzhounet.api.tez.ie',
-        well : 'KT1UsVVireDXZE5R1waCeyKnYD178g2cVDji',
+        endpoint: 'https://ithacanet.ecadinfra.com',
+        well : 'KT1ReVgfaUqHzWWiNRfPXQxf7TaBLVbxrztw',
         verbose: true
       })
     };

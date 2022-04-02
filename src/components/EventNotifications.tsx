@@ -21,8 +21,8 @@ const NotificationMenu = () => {
     setPaused(prev => !prev)
     if (isPaused) {
       await runCrank({
-        endpoint: 'https://hangzhounet.api.tez.ie',
-        well : 'KT1UsVVireDXZE5R1waCeyKnYD178g2cVDji',
+        endpoint: 'https://ithacanet.ecadinfra.com',
+        well : 'KT1ReVgfaUqHzWWiNRfPXQxf7TaBLVbxrztw',
         verbose: true
       })
     } else {

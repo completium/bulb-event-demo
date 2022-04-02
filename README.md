@@ -13,7 +13,7 @@ $ completium-cli deploy ./contract/bulb.arl
 
 Replace contract address in [`App.tsx`](./src/App.tsx) line 17:
 ```typescript
-const bulbAddress = "KT19EAMugKU416cbA9jL1XcukWArfpv4dLYu"
+const bulbAddress = "KT1PKQ76kR1nZSvu5YN41r7GjYcAqGQSrLxg"
 ```
 
 ## Bindings generation
